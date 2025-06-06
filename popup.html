@@ -5,20 +5,39 @@
   <meta charset="UTF-8">
   <title>网站屏蔽设置</title>
   <style>
-    body { font-family: sans-serif; width: 300px; padding: 10px; }
-    h3 { margin-top: 0; }
+    /* --- 修改这里 --- */
+    body { 
+      font-family: sans-serif; 
+      width: 350px; /* 调宽页面 */
+      padding: 15px; 
+    }
+    h3 { margin-top: 0; margin-bottom: 10px; }
     input { width: 95%; margin-bottom: 10px; }
     button { width: 100%; padding: 8px; }
-    /* --- 修改这里 --- */
     ul { 
       list-style: none; 
       padding: 0; 
-      max-height: 150px;      /* 新增：给列表一个最大高度 */
-      overflow-y: auto;       /* 新增：当内容超出时，自动显示垂直滚动条 */
+      max-height: 200px;      /* 给列表一个最大高度 */
+      overflow-y: auto;       /* 当内容超出时，自动显示垂直滚动条 */
+      border: 1px solid #eee; /* 给列表加个边框，更清晰 */
+      border-radius: 4px;     /* 圆角 */
     }
+    li { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 8px 10px; /* 增加内边距，更美观 */
+      border-bottom: 1px solid #eee; 
+    }
+    li:last-child {
+      border-bottom: none; /* 最后一个条目不要下边框 */
+    }
+    li button { 
+      width: auto; 
+      padding: 4px 8px; 
+      margin-left: 10px; /* 让删除按钮和文字之间有点间距 */
+    } 
     /* ----------------- */
-    li { display: flex; justify-content: space-between; align-items: center; padding: 5px; border-bottom: 1px solid #ccc; }
-    li button { width: auto; padding: 4px 8px; } /* 优化删除按钮样式 */
   </style>
 </head>
 <body>
