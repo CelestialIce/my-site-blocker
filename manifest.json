@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "我的网站屏蔽器 (My Site Blocker)",
+  "version": "1.0",
+  "description": "屏蔽指定网站，并限制每日访问时间。",
+  "permissions": [
+    "storage",
+    "tabs",
+    "alarms"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["block_page.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

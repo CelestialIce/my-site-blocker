@@ -1,0 +1,39 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>网站屏蔽设置</title>
+  <style>
+    body { font-family: sans-serif; width: 300px; padding: 10px; }
+    h3 { margin-top: 0; }
+    input { width: 95%; margin-bottom: 10px; }
+    button { width: 100%; padding: 8px; }
+    /* --- 修改这里 --- */
+    ul { 
+      list-style: none; 
+      padding: 0; 
+      max-height: 150px;      /* 新增：给列表一个最大高度 */
+      overflow-y: auto;       /* 新增：当内容超出时，自动显示垂直滚动条 */
+    }
+    /* ----------------- */
+    li { display: flex; justify-content: space-between; align-items: center; padding: 5px; border-bottom: 1px solid #ccc; }
+    li button { width: auto; padding: 4px 8px; } /* 优化删除按钮样式 */
+  </style>
+</head>
+<body>
+  <h3>添加屏蔽网站</h3>
+  <form id="add-site-form">
+    <input type="text" id="site-url" placeholder="例如: youtube.com" required>
+    <input type="number" id="time-limit" placeholder="每日限制时间 (分钟)" min="0" required>
+    <button type="submit">添加/更新</button>
+  </form>
+
+  <h3>已屏蔽列表</h3>
+  <ul id="blocked-sites-list">
+    <!-- 列表项将由JS动态添加 -->
+  </ul>
+
+  <script src="popup.js"></script>
+</body>
+</html>
